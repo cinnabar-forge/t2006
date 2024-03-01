@@ -25,13 +25,16 @@
   "scripts": {
     "format": "npx prettier . --write",
     "lint": "npx eslint --fix --ext .js,.json .",
-    "verify": "npm run lint && npm run format"
+    "test": "mocha",
+    "verify": "npm run lint && npm run format && npm test"
   },
   "dependencies": {
     "commander": "12.0.0",
     "fs-extra": "11.2.0"
   },
   "devDependencies": {
-    "@cinnabar-forge/eslint-plugin": "0.3.0"
+    "@cinnabar-forge/eslint-plugin": "0.3.0",
+    "chai": "5.1.0",
+    "mocha": "10.3.0"
   }
 }
