@@ -1,0 +1,74 @@
+{
+  "title": "John Doe",
+  "header": {
+    "image": "https://dev.w3.org/SVG/tools/svgweb/samples/svg-files/why.svg",
+    "name": "John Doe"
+  },
+  "sections": [
+    {
+      "title": "LIBRARIES",
+      "items": [
+        {
+          "name": "Megalib",
+          "image": "https://dev.w3.org/SVG/tools/svgweb/samples/svg-files/semweb.svg",
+          "links": [
+            {
+              "text": "repo",
+              "url": "https://example.com/"
+            }
+          ]
+        },
+        {
+          "name": "Libsupra",
+          "links": [
+            {
+              "text": "repo A",
+              "url": "https://example.com/"
+            },
+            {
+              "text": "repo B",
+              "url": "https://example.com/"
+            }
+          ],
+          "status": "beta"
+        },
+        {
+          "image": "https://dev.w3.org/SVG/tools/svgweb/samples/svg-files/zillow.svg",
+          "links": [
+            {
+              "text": "more projects here",
+              "url": "https://example.com/"
+            }
+          ]
+        },
+        {
+          "links": [
+            {
+              "text": "even more projects here",
+              "url": "https://example.com/"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "CONTACT ME",
+      "items": [
+        {
+          "name": "ExampleGit",
+          "image": {
+            "path": "https://dev.w3.org/SVG/tools/svgweb/samples/svg-files/beacon.svg",
+            "darkFilter": true
+          },
+          "links": [
+            {
+              "text": "@john_doe",
+              "url": "https://example.com/"
+            }
+          ],
+          "status": "main"
+        }
+      ]
+    }
+  ]
+}

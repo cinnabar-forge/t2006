@@ -1,0 +1,37 @@
+{
+  "name": "t2006",
+  "version": "0.0.0",
+  "description": "A small, low-opinionated static site generator for showcasing your projects",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cinnabar-forge/t2006.git"
+  },
+  "license": "ISC",
+  "author": {
+    "name": "Timur Moziev",
+    "email": "timur.moziev@gmail.com",
+    "url": "https://timurrin.github.io"
+  },
+  "type": "module",
+  "main": "src/index.js",
+  "bin": {
+    "t2006": "bin/t2006"
+  },
+  "files": [
+    "bin",
+    "src",
+    "version.json"
+  ],
+  "scripts": {
+    "format": "npx prettier . --write",
+    "lint": "npx eslint --fix --ext .js,.json .",
+    "verify": "npm run lint && npm run format"
+  },
+  "dependencies": {
+    "commander": "12.0.0",
+    "fs-extra": "11.2.0"
+  },
+  "devDependencies": {
+    "@cinnabar-forge/eslint-plugin": "0.3.0"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "extends": ["plugin:@cinnabar-forge/default"],
+  "parserOptions": {
+    "sourceType": "module"
+  },
+  "plugins": ["@cinnabar-forge"]
+}
