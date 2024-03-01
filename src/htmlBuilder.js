@@ -1,22 +1,4 @@
-function getTagName(htmlString) {
-  const tagMatch = htmlString.match(new RegExp("<\\s*([^>\\s\\/]+)[^>]*>"));
-  return tagMatch ? tagMatch[1] : null;
-}
-
-function isTagClosed(htmlString) {
-  if (htmlString.trim().endsWith("/>")) {
-    return true;
-  }
-
-  const tagName = getTagName(htmlString);
-  if (!tagName) {
-    return false;
-  }
-
-  // eslint-disable-next-line security/detect-non-literal-regexp
-  const closeTagRegex = new RegExp(`<\\/\\s*${tagName}\\s*>`, "i");
-  return closeTagRegex.test(htmlString);
-}
+import { getHtmlTagName, isHtmlTagClosed } from "./utils.js"
 
 export default class {
   lines = [];
@@ -28,9 +10,9 @@ export default class {
 
   add(markup) {
     this.lines.push("  ".repeat(this.indentation) + markup);
-    if (!isTagClosed(markup)) {
+    if (!isHtmlTagClosed(markup)) {
       this.indentation++;
-      this.tree.push(getTagName(markup));
+      this.tree.push(getHtmlTagName(markup));
     }
 
     return this;
@@ -49,6 +31,7 @@ export default class {
     this.indentation--;
     const parentTag = this.tree.pop();
     this.lines.push("  ".repeat(this.indentation) + `</${parentTag}>`);
+    return this;
   }
 
   raw(markup) {

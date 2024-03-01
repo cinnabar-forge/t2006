@@ -1,4 +1,7 @@
 {
+  "env": {
+    "mocha": true
+  },
   "extends": ["plugin:@cinnabar-forge/default"],
   "parserOptions": {
     "sourceType": "module"
