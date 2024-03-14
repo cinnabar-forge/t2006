@@ -46,12 +46,9 @@ h2 {
   overflow: hidden;
 }
 
-.tr {
+.section {
   margin-left: auto;
   margin-right: auto;
-}
-
-.section {
   margin-top: 1.5em;
   font-size: 1.2em;
 }
@@ -65,6 +62,10 @@ h2 {
 .vertical * {
   margin-left: 0.05em;
   margin-right: 0.05em;
+}
+
+.left-buffer {
+  margin-left: 0.25em;
 }
 
 .dot {

@@ -4,7 +4,7 @@ export function generateHtml(data) {
   const builder = new HtmlBuilder(2);
 
   data.sections.map((section) => {
-    builder.add(`<div class="tr section">`).add(`<h2>${section.title}</h2>`);
+    builder.add(`<div class="section">`).add(`<h2>${section.title}</h2>`);
     section.items.map((item) => {
       builder.add(`<div class="vertical">`);
       if (item.image) {
@@ -19,8 +19,10 @@ export function generateHtml(data) {
       if (item.name != null) {
         builder.add(`<span class="bold">${item.name}</span>`);
       }
-      item.links.map((link) => {
-        builder.add(`<a class="link" href="${link.url}">${link.text}</a>`);
+      item.links.map((link, index) => {
+        builder.add(
+          `<a class="link${index === 0 ? " left-buffer" : ""}" href="${link.url}">${link.text}</a>`,
+        );
       });
       if (item.status != null) {
         builder.add(`<span class="italic small">${item.status}</span>`);
