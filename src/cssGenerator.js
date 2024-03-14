@@ -16,6 +16,17 @@ body {
   font-family: ${settings.fontText.fontFamily};
   color: ${convertToHex(settings.colors.textColor || "black")};
   background-color: ${convertToHex(settings.colors.backgroundColor || "white")};
+  min-height: 100vh;
+  padding: 0;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+header {
+  margin-top: 2em;
 }
 
 h2 {
@@ -23,34 +34,28 @@ h2 {
   margin-bottom: 0.25em;
 }
 
-.link {
+a {
   text-decoration: none;
   color: ${convertToHex(settings.colors.linkColor)};
   padding: 0 0.2em;
 }
 
-.link:hover {
+a:hover {
   text-decoration: dotted;
   background-color: ${convertToHex(settings.colors.linkHoverBackgroundColor)};
   color: ${convertToHex(settings.colors.linkHoverTextColor)};
 }
 
-.block {
-  min-height: 100vh;
-  padding: 2em 0;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-}
-
-.section {
+section {
   margin-left: auto;
   margin-right: auto;
   margin-top: 1.5em;
   font-size: 1.2em;
+}
+
+footer {
+  margin-top: 2em;
+  margin-bottom: 1.5em;
 }
 
 .about {
@@ -70,16 +75,6 @@ h2 {
   margin-right: 0.05em;
 }
 
-.left-buffer {
-  margin-left: 0.25em;
-}
-
-.dot {
-  margin-left: 0.1em;
-  margin-right: 0.1em;
-  user-select: none;
-}
-
 .image-circle {
   height: 1em;
   width: 1em;
@@ -89,16 +84,16 @@ h2 {
   margin-right: 0.15em;
 }
 
-.right-space {
-  margin-right: 0.3em;
-}
-
 .bold {
   font-weight: bold;
 }
 
 .italic {
   font-style: italic;
+}
+
+.left-buffer {
+  margin-left: 0.25em;
 }
 
 .small {
@@ -119,11 +114,11 @@ h2 {
     border-bottom-color: ${convertToHex(settings.colorsDark.borderColor)};
   }
 
-  .link {
+  a {
     color: ${convertToHex(settings.colorsDark.linkColor)};
   }
 
-  .link:hover {
+  a:hover {
     background-color: ${convertToHex(settings.colorsDark.linkHoverBackgroundColor)};
     color: ${convertToHex(settings.colorsDark.linkHoverTextColor)};
   }
