@@ -53,6 +53,12 @@ h2 {
   font-size: 1.2em;
 }
 
+.about {
+  margin: 1em 3em 0;
+  font-size: 1.2em;
+  max-width: 25em;
+}
+
 .vertical {
   display: flex;
   align-items: center;

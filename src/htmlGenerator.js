@@ -3,6 +3,29 @@ import HtmlBuilder from "./htmlBuilder.js";
 export function generateHtml(data) {
   const builder = new HtmlBuilder(2);
 
+  if (data.header != null) {
+    builder.add("<div>");
+
+    builder.add(`<h1 class="vertical">`);
+    if (data.header.image != null) {
+      builder.add(`<img class="image-circle" src="${data.header.image}" />`);
+    }
+    if (data.header.title != null) {
+      builder.add(`<span>${data.header.title}</span>`);
+    }
+    builder.close();
+
+    if (data.header.subtitle != null) {
+      builder.add(`<div>${data.header.subtitle}</div>`);
+    }
+
+    if (data.header.about != null) {
+      builder.add(`<div class="about">${data.header.about}</div>`);
+    }
+
+    builder.close();
+  }
+
   data.sections.map((section) => {
     builder.add(`<div class="section">`).add(`<h2>${section.title}</h2>`);
     section.items.map((item) => {
@@ -44,8 +67,7 @@ export function generateHtml(data) {
 
 <body>
   <div class="block">
-    <h1 class="vertical"><img class="image-circle" src="${data.header.image}" />${data.header.name}</h1>
-  ${builder.build()}
+${builder.build()}
   </div>
 </body>
 </html>

@@ -1,4 +1,4 @@
-import { getHtmlTagName, isHtmlTagClosed } from "./utils.js"
+import { getHtmlTagName, isHtmlTagClosed } from "./utils.js";
 
 export default class {
   lines = [];
