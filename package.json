@@ -27,7 +27,7 @@
   "type": "module",
   "main": "src/index.js",
   "bin": {
-    "t2006": "bin/t2006"
+    "t2006": "bin/t2006.js"
   },
   "files": [
     "bin",
