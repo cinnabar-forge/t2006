@@ -2,6 +2,8 @@
 
 _By Cinnabar Forge_
 
+**DISCLAIMER**: Until version 1.0.0, all versions below should be considered unstable and are subject to change.
+
 A small, low-opinionated static site generator for showcasing your projects.
 
 You can change sections quantity, text, colors (dark-theme ready) and fonts for headers and text.
@@ -18,6 +20,46 @@ npm install -g t2006
 
 This will make the `t2006` command available in your terminal.
 
+### Configuration
+
+t2006 is driven by two main configuration files:
+
+- `data.json`: Defines the structure and content of your site.
+- `style.json`: Specifies the visual styling of your site.
+
+Both files examples can be found inside `sample` folder.
+
+#### `data.json` structure
+
+```json
+{
+  "title": "My Portfolio",
+  "header": {
+    "name": "MY NAME"
+  },
+  "sections": [
+    {
+      "title": "SECTION NAME",
+      "items": [
+        {
+          "name": "Text",
+          "image": {
+            "path": "https://dev.w3.org/SVG/tools/svgweb/samples/svg-files/beacon.svg"
+          },
+          "links": [
+            {
+              "text": "example link",
+              "url": "https://example.com/"
+            }
+          ],
+          "extra": "extra text"
+        }
+      ]
+    }
+  ]
+}
+```
+
 ### Usage
 
 ```bash
@@ -26,7 +68,7 @@ t2006 --input "path/to/json/data/files" --output "path/to/html/output"
 
 #### `--input <path>`
 
-**path**: A path with data.json and style.json. You can check 'sample' folder for the expected format.
+**path**: A path with data.json and style.json.
 
 #### `--output <path>`
 

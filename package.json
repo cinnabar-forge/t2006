@@ -2,6 +2,18 @@
   "name": "t2006",
   "version": "0.2.0",
   "description": "A small, low-opinionated static site generator for showcasing your projects",
+  "keywords": [
+    "cli",
+    "static-site-generator",
+    "website-builder",
+    "html-generator",
+    "css-generator",
+    "web-development",
+    "content-management",
+    "site-generator",
+    "build-tool",
+    "deployment"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/cinnabar-forge/t2006.git"
@@ -19,6 +31,7 @@
   },
   "files": [
     "bin",
+    "sample",
     "src",
     "version.json"
   ],
