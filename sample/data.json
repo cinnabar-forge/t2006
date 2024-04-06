@@ -1,5 +1,6 @@
 {
   "title": "John Doe",
+  "description": "An example page configuration",
   "header": {
     "image": "https://dev.w3.org/SVG/tools/svgweb/samples/svg-files/why.svg",
     "title": "John Doe",
@@ -39,6 +40,16 @@
           "links": [
             {
               "text": "more projects here",
+              "url": "https://example.com/"
+            }
+          ]
+        },
+        {
+          "name": "foo",
+          "text": "bar",
+          "links": [
+            {
+              "text": "xar",
               "url": "https://example.com/"
             }
           ]

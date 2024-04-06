@@ -1,6 +1,5 @@
 {
   "colors": {
-    "primaryColor": "#901050",
     "linkColor": "#901050",
     "linkHoverBackgroundColor": "#901050",
     "linkHoverTextColor": "#ececec",
@@ -15,13 +14,13 @@
     "linkHoverTextColor": "#ececec"
   },
   "fontHeaders": {
-    "fontFamily": "\"source-sans-pro\", Arial",
+    "fontFamily": "Arial, sans-serif",
     "fontWeight": "bold",
     "fontSize": "1.2em",
     "fontStyle": "normal"
   },
   "fontText": {
-    "fontFamily": "\"source-sans-pro\", Arial",
+    "fontFamily": "Arial, sans-serif",
     "fontSize": "normal",
     "fontWeight": "normal",
     "fontStyle": "italic"

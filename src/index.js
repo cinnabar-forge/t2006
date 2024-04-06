@@ -2,10 +2,17 @@ import { program } from "commander";
 import fs from "fs-extra";
 import path from "path";
 
+import cinnabarData from "./cinnabar.js";
 import { generateCss } from "./cssGenerator.js";
 import { generateHtml } from "./htmlGenerator.js";
 
+console.log(
+  `\n${cinnabarData.stack.nodejs.package}@${cinnabarData.version.text}\n`,
+);
+
 program
+  .name(cinnabarData.stack.nodejs.package)
+  .version(`v${cinnabarData.version.text}`, "-v, --version")
   .requiredOption("-i, --input <path>", "Path to data.json and style.json")
   .requiredOption(
     "-o, --output <path>",
@@ -27,8 +34,12 @@ const htmlContent = generateHtml(data);
 const cssContent = generateCss(style);
 
 const outputPath = path.resolve(options.output);
+const indexHtmlPath = path.join(outputPath, "index.html");
+const styleCssPath = path.join(outputPath, "style.css");
 
-fs.outputFileSync(path.join(outputPath, "index.html"), htmlContent);
-fs.outputFileSync(path.join(outputPath, "style.css"), cssContent);
+fs.outputFileSync(indexHtmlPath, htmlContent);
+fs.outputFileSync(styleCssPath, cssContent);
 
-console.log("Site has been generated at " + outputPath);
+console.log(
+  `\n'${data.title ?? "t2006 site"}' (${data.description ?? "-"}) has been generated at ${indexHtmlPath}`,
+);

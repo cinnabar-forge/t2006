@@ -6,9 +6,23 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
+report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
 
-node_modules
-*.local
+# Dependency directories
+node_modules/
+jspm_packages/
+.yarn/cache
+.yarn/unplugged
+.yarn/build-state.yml
+.yarn/install-state.gz
+.pnp.*
+.yarn-integrity
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
 
 # Editor directories and files
 .idea
@@ -18,12 +32,23 @@ node_modules
 *.njsproj
 *.sln
 *.sw?
+.vscode
 
 # Built sources
 /dist
+/build
+*.spec
+
+# Output of 'npm pack'
+*.tgz
 
 # Local settings
 .env
+.env.development.local
+.env.test.local
+.env.production.local
+.env.local
+config.json
 
 # Data
 /data
