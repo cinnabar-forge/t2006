@@ -84,6 +84,10 @@ footer {
   margin-right: 0.15em;
 }
 
+.subtext {
+  color: ${settings.colors.subtextColor};
+}
+
 .bold {
   font-weight: bold;
 }
@@ -121,6 +125,10 @@ footer {
   a:hover {
     background-color: ${convertToHex(settings.colorsDark.linkHoverBackgroundColor)};
     color: ${convertToHex(settings.colorsDark.linkHoverTextColor)};
+  }
+
+  .subtext {
+    color: ${settings.colorsDark.subtextColor};
   }
 
   .dark-theme-filter {

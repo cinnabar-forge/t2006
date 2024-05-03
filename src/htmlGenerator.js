@@ -47,7 +47,7 @@ export function generateHtml(data) {
         builder.add(`<span class="bold">${item.name}</span>`);
       }
       if (item.text != null) {
-        builder.add(`<span class="left-buffer">${item.text}</span>`);
+        builder.add(`<span class="subtext${item.name != null ? " left-buffer" : ""}">${item.text}</span>`);
       }
       item.links.map((link, index) => {
         builder.add(
