@@ -3,12 +3,13 @@
   "description": "A small, low-opinionated static site generator for showcasing your projects",
   "name": "t2006",
   "version": {
+    "dev": 0,
     "major": 0,
-    "minor": 2,
-    "patch": 1,
-    "revision": 3,
-    "text": "0.2.1",
-    "timestamp": 1711105111
+    "minor": 3,
+    "patch": 0,
+    "revision": 4,
+    "text": "0.3.0",
+    "timestamp": 1715078466
   },
   "stack": {
     "nodejs": {
