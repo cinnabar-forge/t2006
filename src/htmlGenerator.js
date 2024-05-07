@@ -6,7 +6,7 @@ export function generateHtml(data) {
 
   if (data.header != null) {
     builder.add("<header>");
-    builder.add(`<h1 class="vertical">`);
+    builder.add(`<h1 class="line">`);
     if (data.header.image != null) {
       builder.add(
         `<img class="image-circle" style="height: 1em; width: 1em;" src="${data.header.image}" />`,
@@ -29,9 +29,11 @@ export function generateHtml(data) {
   }
 
   data.sections.map((section) => {
-    builder.add(`<section>`).add(`<h2>${section.title}</h2>`);
+    builder.add(`<section>`).add(`<h2>${section.title}</h2>`).add(`<div>`);
     section.items.map((item) => {
-      builder.add(`<p class="vertical">`);
+      const itemStyle = item.text != null ? "card" : "line";
+      builder.add(`<p class="${itemStyle}">`);
+      builder.add(`<span class="line">`);
       if (item.image) {
         if (typeof item.image === "object") {
           builder.add(
@@ -44,21 +46,27 @@ export function generateHtml(data) {
         }
       }
       if (item.name != null) {
-        builder.add(`<span class="bold">${item.name}</span>`);
+        builder.add(`<span class="line bold">${item.name}</span>`);
       }
+      builder.close();
       if (item.text != null) {
-        builder.add(`<span class="subtext${item.name != null ? " left-buffer" : ""}">${item.text}</span>`);
-      }
-      item.links.map((link, index) => {
         builder.add(
-          `<a class="link${index === 0 ? " left-buffer" : ""}" href="${link.url}" target="_blank" rel="noopener noreferrer">${link.text}</a>`,
+          `<span class="subtext">${item.text}</span>`,
+        );
+      }
+      builder.add(`<span class="line">`);
+      item.links.map((link) => {
+        builder.add(
+          `<a class="link" href="${link.url}" target="_blank" rel="noopener noreferrer">${link.text}</a>`,
         );
       });
+      builder.close();
       if (item.extra != null) {
-        builder.add(`<span class="italic small">${item.extra}</span>`);
+        builder.add(`<span class="line italic small">${item.extra}</span>`);
       }
       builder.close();
     });
+    builder.close();
     builder.close();
   });
 

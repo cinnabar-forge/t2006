@@ -64,15 +64,20 @@ footer {
   max-width: 25em;
 }
 
-.vertical {
+.line {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.vertical * {
+.line * {
   margin-left: 0.05em;
   margin-right: 0.05em;
+}
+
+.card {
+  margin: 1em;
+  display: inline-block;
 }
 
 .image-circle {
@@ -86,6 +91,8 @@ footer {
 
 .subtext {
   color: ${settings.colors.subtextColor};
+  max-width: 25em;
+  display: block;
 }
 
 .bold {
@@ -94,10 +101,6 @@ footer {
 
 .italic {
   font-style: italic;
-}
-
-.left-buffer {
-  margin-left: 0.25em;
 }
 
 .small {
