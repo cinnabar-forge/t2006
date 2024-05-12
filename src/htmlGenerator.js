@@ -50,9 +50,7 @@ export function generateHtml(data) {
       }
       builder.close();
       if (item.text != null) {
-        builder.add(
-          `<span class="subtext">${item.text}</span>`,
-        );
+        builder.add(`<span class="subtext">${item.text}</span>`);
       }
       builder.add(`<span class="line">`);
       item.links.map((link) => {
@@ -62,7 +60,7 @@ export function generateHtml(data) {
       });
       builder.close();
       if (item.extra != null) {
-        builder.add(`<span class="line italic small">${item.extra}</span>`);
+        builder.add(`<span class="line italic">${item.extra}</span>`);
       }
       builder.close();
     });
@@ -90,7 +88,7 @@ export function generateHtml(data) {
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="${data.description ?? "t2006 site"}">
   <title>${data.title}</title>
-  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./style.css">${data.cinnalyticsUrl ? '\n\n  <!-- Cinnalytics -->\n  <script async src="' + data.cinnalyticsUrl + '"></script>' : ""}
 </head>
 
 <body>
