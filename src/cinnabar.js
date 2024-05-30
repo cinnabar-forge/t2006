@@ -2,7 +2,7 @@
 
 export default {
   "cinnabarMetaVersion": 1,
-  "description": "A small, low-opinionated static site generator for showcasing your projects",
+  "description": "A small, low-opinionated static site generator with sections and items",
   "name": "t2006",
   "version": {
     "dev": 0,

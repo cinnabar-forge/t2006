@@ -4,9 +4,13 @@ _By Cinnabar Forge_
 
 **DISCLAIMER**: Until version 1.0.0, all versions below should be considered unstable and are subject to change.
 
-A small, low-opinionated static site generator for showcasing your projects.
+A small, low-opinionated static site generator with sections and items.
 
-You can change sections quantity, text, colors (dark-theme ready) and fonts for headers and text.
+You can change sections quantity, text, images, colors (dark-theme ready) and fonts for headers and text.
+
+![t2006 screenshot](sample/screenshot-readme.png)
+
+Sample site: [page](https://timurrin.github.io/) and [repo](https://github.com/TimurRin/timurrin.github.io)
 
 ## Getting Started
 
@@ -18,7 +22,7 @@ Install t2006 globally using npm:
 npm install -g t2006
 ```
 
-This will make the `t2006` command available in your terminal.
+This will make the `npx t2006` or `t2006` commands available in your terminal.
 
 ### Configuration
 
@@ -29,30 +33,39 @@ t2006 is driven by two main configuration files:
 
 Both files examples can be found inside `sample` folder.
 
-#### `data.json` structure
+#### `data.json` structure from the screenshot
 
 ```json
 {
-  "title": "My Portfolio",
+  "title": "Title text",
+  "description": "HTML meta description text",
   "header": {
-    "name": "MY NAME"
+    "image": "https://dev.w3.org/SVG/tools/svgweb/samples/svg-files/why.svg",
+    "title": "TITLE TEXT",
+    "subtitle": "Subtitle text",
+    "about": "About text"
   },
   "sections": [
     {
-      "title": "SECTION NAME",
+      "title": "SECTION TEXT",
       "items": [
         {
-          "name": "Text",
+          "name": "Line example",
           "image": {
             "path": "https://dev.w3.org/SVG/tools/svgweb/samples/svg-files/beacon.svg"
           },
           "links": [
-            {
-              "text": "example link",
-              "url": "https://example.com/"
-            }
+            { "text": "link", "url": "https://example.com/" }
           ],
-          "extra": "extra text"
+          "extra": "extra info"
+        },
+        {
+          "name": "Card example",
+          "text": "If you need description",
+          "links": [
+            { "text": "foo", "url": "https://example.com/" },
+            { "text": "bar", "url": "https://example.com/" }
+          ]
         }
       ]
     }
@@ -63,7 +76,7 @@ Both files examples can be found inside `sample` folder.
 ### Usage
 
 ```bash
-t2006 --input "path/to/json/data/files" --output "path/to/html/output"
+npx t2006 --input "path/to/json/data/files" --output "path/to/html/output"
 ```
 
 #### `--input <path>`
@@ -78,13 +91,18 @@ t2006 --input "path/to/json/data/files" --output "path/to/html/output"
 
 Contributions are welcome! If you find any issues or have suggestions for improvements, feel free to open an issue or create a pull request.
 
-Clone the repository and install dependencies:
+Fork, clone and install:
 
 ```bash
-git clone git@github.com:cinnabar-forge/t2006.git
-cd t2006
-npm install
+npm ci
 ```
+
+### Road to 1.0
+
+- ⚠️ Tests
+- ❌ GitHub Actions script
+- ❌ Special pages to present your content in the advanced way
+- ❌ Localization
 
 ## License
 
